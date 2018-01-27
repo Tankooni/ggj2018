@@ -1,0 +1,146 @@
+fileFormatVersion: 2
+guid: 11420fec522e1204d8a292bd91774dfb
+timeCreated: 1517076262
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Carpals
+    100002: //RootNode
+    100004: Index
+    100006: Index.001
+    100008: Index.002
+    100010: Index.002_end
+    100012: Middle
+    100014: Middle.001
+    100016: Middle.002
+    100018: Middle.002_end
+    100020: Pinky
+    100022: Pinky.001
+    100024: Pinky.002
+    100026: Pinky.002_end
+    100028: Ring
+    100030: Ring.001
+    100032: Ring.002
+    100034: Ring.002_end
+    100036: Root
+    100038: Thumb
+    100040: Thumb.001
+    100042: Thumb.002
+    100044: Thumb.002_end
+    100046: Wrist
+    100048: Wrist_end
+    100050: Armature
+    100052: Hand
+    400000: Carpals
+    400002: //RootNode
+    400004: Index
+    400006: Index.001
+    400008: Index.002
+    400010: Index.002_end
+    400012: Middle
+    400014: Middle.001
+    400016: Middle.002
+    400018: Middle.002_end
+    400020: Pinky
+    400022: Pinky.001
+    400024: Pinky.002
+    400026: Pinky.002_end
+    400028: Ring
+    400030: Ring.001
+    400032: Ring.002
+    400034: Ring.002_end
+    400036: Root
+    400038: Thumb
+    400040: Thumb.001
+    400042: Thumb.002
+    400044: Thumb.002_end
+    400046: Wrist
+    400048: Wrist_end
+    400050: Armature
+    400052: Hand
+    2100000: No Name
+    4300000: Hand
+    7400000: Armature|ArmatureAction
+    9500000: //RootNode
+    13700000: Hand
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
