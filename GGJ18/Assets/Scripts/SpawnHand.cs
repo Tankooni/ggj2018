@@ -3,23 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
 
-public class FusionHand : MonoBehaviour {
+public class SpawnHand : MonoBehaviour {
 
-    private VRTK_InteractGrab interactGrab;
-
-	private void Awake()
-    {
-        this.interactGrab = this.gameObject.GetComponent<VRTK_InteractGrab>();
-        interactGrab.ControllerUngrabInteractableObject += ChangeGrabbableColor;
-
+	private void Awake() {
 		var interactUse = this.gameObject.GetComponent<VRTK_InteractUse> ();
 		interactUse.UseButtonPressed += SpawnObject;
 	}
-
-    private void ChangeGrabbableColor(object sender, ObjectInteractEventArgs e)
-    {
-        e.target.GetComponent<Rigidbody>().useGravity = false;
-    }
 
 	private void SpawnObject(object sender, VRTK.ControllerInteractionEventArgs e) {
 		Debug.Log ("Spawning object");
