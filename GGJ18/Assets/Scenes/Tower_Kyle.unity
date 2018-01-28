@@ -196,6 +196,10 @@ Prefab:
       propertyPath: m_Name
       value: Red Brick (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4062373729857336, guid: 022ca5752e1cfba48adfe26cd92781a3, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.85586125
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 022ca5752e1cfba48adfe26cd92781a3, type: 2}
   m_IsPrefabParent: 0
@@ -312,6 +316,14 @@ Prefab:
     - target: {fileID: 1098150279129442, guid: 022ca5752e1cfba48adfe26cd92781a3, type: 2}
       propertyPath: m_Name
       value: Red Brick (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062373729857336, guid: 022ca5752e1cfba48adfe26cd92781a3, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.615556
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062373729857336, guid: 022ca5752e1cfba48adfe26cd92781a3, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.13072045
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 022ca5752e1cfba48adfe26cd92781a3, type: 2}

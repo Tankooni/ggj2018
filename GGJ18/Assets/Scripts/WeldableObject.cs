@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using VRTK;
+using VRTK.Highlighters;
+using VRTK.GrabAttachMechanics;
 
-[RequireComponent(typeof(VRTK_InteractableObject), typeof(Collider))]
-[RequireComponent(typeof(VRTK.Highlighters.VRTK_OutlineObjectCopyHighlighter))]
+[RequireComponent(typeof(VRTK_InteractableObject))]
+[RequireComponent(typeof(VRTK_OutlineObjectCopyHighlighter))]
+[RequireComponent(typeof(Collider))]
 public class WeldableObject : MonoBehaviour
 {
     private static Color CLIMBABLE_COLOR = Color.yellow;
@@ -16,7 +19,7 @@ public class WeldableObject : MonoBehaviour
     private bool isWelded = false;
 
     private VRTK_InteractableObject interactableObject;
-    private VRTK.Highlighters.VRTK_OutlineObjectCopyHighlighter outlineHighlighter;
+    private VRTK_OutlineObjectCopyHighlighter outlineHighlighter;
     private Rigidbody rrigidbody;
     private Collider ccollider;
 
@@ -72,7 +75,7 @@ public class WeldableObject : MonoBehaviour
         this.meshRenderer = this.GetComponent<MeshRenderer>();
         this.interactableObject = this.GetComponent<VRTK_InteractableObject>();
         this.rrigidbody = this.GetComponent<Rigidbody>();
-        this.outlineHighlighter = this.GetComponent<VRTK.Highlighters.VRTK_OutlineObjectCopyHighlighter>();
+        this.outlineHighlighter = this.GetComponent<VRTK_OutlineObjectCopyHighlighter>();
         this.ccollider = this.GetComponent<Collider>();
 
         this.originalMaterial = meshRenderer.material;
@@ -109,7 +112,7 @@ public class WeldableObject : MonoBehaviour
 
             // --- Change the grab type ---
             // Make a climbable one with default settings (for now)
-            var climbableGrabAttach = this.gameObject.AddComponent<VRTK.GrabAttachMechanics.VRTK_ClimbableGrabAttach>();
+            var climbableGrabAttach = this.gameObject.AddComponent<VRTK_ClimbableGrabAttach>();
             // Destroy the old one
             Destroy(this.interactableObject.grabAttachMechanicScript);
             // Replace it with the new one
@@ -123,6 +126,11 @@ public class WeldableObject : MonoBehaviour
 
             // MARK IT AS WELDED
             this.IsWelded = true;
+
+            // Tell the Patback that we've welded the object
+            var patback = FindObjectOfType<Patback>();
+            if (patback != null)
+                patback.ObjectIsWelded = true;
         }
 
         this.ccollider.isTrigger = false;
