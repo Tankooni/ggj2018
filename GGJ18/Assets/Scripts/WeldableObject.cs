@@ -2,6 +2,7 @@
 using VRTK;
 using VRTK.Highlighters;
 using VRTK.GrabAttachMechanics;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(VRTK_InteractableObject))]
 [RequireComponent(typeof(VRTK_OutlineObjectCopyHighlighter))]
@@ -21,7 +22,8 @@ public class WeldableObject : MonoBehaviour
     private VRTK_InteractableObject interactableObject;
     private VRTK_OutlineObjectCopyHighlighter outlineHighlighter;
     private Rigidbody rrigidbody;
-    private Collider ccollider;
+
+    private List<Collider> colliders;
 
     public bool StartWelded = false;
 
@@ -46,6 +48,14 @@ public class WeldableObject : MonoBehaviour
         get
         {
             return weldablesTouchingCount > 0;
+        }
+    }
+
+    private void SetColliderTrigger(bool isTrigger)
+    {
+        foreach (var col in this.colliders)
+        {
+            col.isTrigger = isTrigger;
         }
     }
 
@@ -78,7 +88,10 @@ public class WeldableObject : MonoBehaviour
         this.interactableObject = this.GetComponent<VRTK_InteractableObject>();
         this.rrigidbody = this.GetComponent<Rigidbody>();
         this.outlineHighlighter = this.GetComponent<VRTK_OutlineObjectCopyHighlighter>();
-        this.ccollider = this.GetComponent<Collider>();
+
+        this.colliders = new List<Collider>();
+        this.colliders.AddRange(this.GetComponents<Collider>());
+        this.colliders.AddRange(this.GetComponentsInChildren<Collider>());
 
         this.originalMaterial = meshRenderer.material;
         this.originalColor = meshRenderer.sharedMaterial.color;
@@ -97,7 +110,7 @@ public class WeldableObject : MonoBehaviour
     public void OnGrabbed()
     {
         if (!IsWelded)
-            this.ccollider.isTrigger = true;
+            SetColliderTrigger(true);
     }
 
     public void OnUngrabbed()
@@ -139,7 +152,7 @@ public class WeldableObject : MonoBehaviour
 
 		}
 
-        this.ccollider.isTrigger = false;
+        SetColliderTrigger(false);
     }
 
     private void OnTriggerEnter(Collider other)
