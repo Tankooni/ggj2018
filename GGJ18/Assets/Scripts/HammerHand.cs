@@ -52,12 +52,12 @@ public class HammerHand : MonoBehaviour {
 		
 	}
 
-	private void OnCollisionEnter(Collision c)
+	private void OnTriggerEnter(Collider other)
 	{
 		Debug.Log("Col Enter");
 
-		var foreignBody = c.gameObject.GetComponent<Rigidbody>();
-		if(foreignBody != null)
+		var foreignBody = other.gameObject.GetComponent<Rigidbody>();
+		if (foreignBody != null)
 		{
 			Debug.Log("Adding force from hammer");
 
@@ -69,21 +69,26 @@ public class HammerHand : MonoBehaviour {
 		if (VRTK_ControllerReference.IsValid(controllerReference))
 		{
 			velocity = -VRTK_DeviceFinder.GetControllerVelocity(controllerReference);
-            if (velocity.magnitude > 1)
-            {
-                velocity.Scale(new Vector3(20, 20, 20));
-                if (usePlayerScale)
-                {
-                    velocity = playArea.TransformVector(velocity);
-                }
-                else
-                {
-                    velocity = playArea.TransformDirection(velocity);
-                }
-            }
+			if (velocity.magnitude > 1)
+			{
+				velocity.Scale(new Vector3(20, 20, 20));
+				if (usePlayerScale)
+				{
+					velocity = playArea.TransformVector(velocity);
+				}
+				else
+				{
+					velocity = playArea.TransformDirection(velocity);
+				}
+			}
 		}
 
 		bodyPhysics.ApplyBodyVelocity(velocity, true, true);
+	}
+
+	private void OnCollisionEnter(Collision c)
+	{
+		
 
 	}
 
