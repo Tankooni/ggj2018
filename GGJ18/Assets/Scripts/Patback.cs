@@ -5,25 +5,23 @@ using VRTK;
 
 public class Patback : MonoBehaviour {
 
-	private bool ObjectPlaced {get; set;}
+	public bool ObjectIsWelded { get; set; }
+
 	public void Awake() {
 		ObjectGenerator.Init();
-		ObjectPlaced = true;
+		ObjectIsWelded = true;
 	}
 
 	private void OnTriggerStay(Collider collider)	{
-		//Debug.Log("Patback ready for AcTioN!");
 		var grabbingObject = collider.gameObject.GetComponent<VRTK_InteractGrab>()
 			?? collider.GetComponentInParent<VRTK_InteractGrab>();
 
-		if(canGrab(grabbingObject) && ObjectPlaced) {
-			ObjectPlaced = false;
+		if(canGrab(grabbingObject) && ObjectIsWelded) {
+			ObjectIsWelded = false;
 			
-			var obj = ObjectGenerator.CreateRandomObject(.1f, .5f);
+			var obj = ObjectGenerator.CreateRandomObject(.8f, 1.2f);
 			grabbingObject.GetComponent<VRTK_InteractTouch>().ForceTouch(obj);
 			grabbingObject.AttemptGrab();
-
-			ObjectPlaced = false;
 		}
 	}
 

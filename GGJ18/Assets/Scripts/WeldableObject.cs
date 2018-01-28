@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using VRTK;
+using VRTK.Highlighters;
+using VRTK.GrabAttachMechanics;
 
-[RequireComponent(typeof(VRTK_InteractableObject), typeof(Rigidbody), typeof(Collider))]
-[RequireComponent(typeof(VRTK.Highlighters.VRTK_OutlineObjectCopyHighlighter))]
+[RequireComponent(typeof(VRTK_InteractableObject))]
+[RequireComponent(typeof(VRTK_OutlineObjectCopyHighlighter))]
+[RequireComponent(typeof(Collider))]
 public class WeldableObject : MonoBehaviour
 {
     private static Color CLIMBABLE_COLOR = Color.yellow;
@@ -19,7 +19,7 @@ public class WeldableObject : MonoBehaviour
     private bool isWelded = false;
 
     private VRTK_InteractableObject interactableObject;
-    private VRTK.Highlighters.VRTK_OutlineObjectCopyHighlighter outlineHighlighter;
+    private VRTK_OutlineObjectCopyHighlighter outlineHighlighter;
     private Rigidbody rrigidbody;
     private Collider ccollider;
 
@@ -53,11 +53,7 @@ public class WeldableObject : MonoBehaviour
     {
         if (IsWelded)
         {
-            // Keep turning isKinematic on because SOMEONE keeps turning it off!
-            if(this.rrigidbody != null) {
-                this.rrigidbody.isKinematic = true;
-                this.meshRenderer.material.color = originalColor;
-            }
+            this.meshRenderer.material.color = originalColor;
         }
         else if (IsGrabbed)
         {
@@ -65,11 +61,13 @@ public class WeldableObject : MonoBehaviour
             {
                 this.interactableObject.touchHighlightColor = TOUCHING_WELDABLE_COLOR;
                 this.meshRenderer.material.color = TOUCHING_WELDABLE_COLOR;
+                interactableObject.validDrop = VRTK_InteractableObject.ValidDropTypes.DropAnywhere;
             }
             else
             {
                 this.interactableObject.touchHighlightColor = TOUCHING_COLOR;
                 this.meshRenderer.material.color = Color.white;
+                interactableObject.validDrop = VRTK_InteractableObject.ValidDropTypes.NoDrop;
             }
         }     
     }
@@ -79,7 +77,7 @@ public class WeldableObject : MonoBehaviour
         this.meshRenderer = this.GetComponent<MeshRenderer>();
         this.interactableObject = this.GetComponent<VRTK_InteractableObject>();
         this.rrigidbody = this.GetComponent<Rigidbody>();
-        this.outlineHighlighter = this.GetComponent<VRTK.Highlighters.VRTK_OutlineObjectCopyHighlighter>();
+        this.outlineHighlighter = this.GetComponent<VRTK_OutlineObjectCopyHighlighter>();
         this.ccollider = this.GetComponent<Collider>();
 
         this.originalMaterial = meshRenderer.material;
@@ -98,21 +96,25 @@ public class WeldableObject : MonoBehaviour
 
     public void OnGrabbed()
     {
-        this.ccollider.isTrigger = true;
+        if (!IsWelded)
+            this.ccollider.isTrigger = true;
     }
 
     public void OnUngrabbed()
     {
         if (!IsWelded && IsTouchingWeldable)
-        {            
-            //// Destroy the rigidbody since we'll never need it again
-            //Destroy(rrigidbody);
-            //// Clear the reference so we don't get any problems later
-            //this.rrigidbody = null;
+        {
+            if (rrigidbody != null)
+            {
+                // Destroy the rigidbody since we'll never need it again
+                Destroy(rrigidbody);
+                // Clear the reference so we don't get any problems later
+                this.rrigidbody = null;
+            }            
 
             // --- Change the grab type ---
             // Make a climbable one with default settings (for now)
-            var climbableGrabAttach = this.gameObject.AddComponent<VRTK.GrabAttachMechanics.VRTK_ClimbableGrabAttach>();
+            var climbableGrabAttach = this.gameObject.AddComponent<VRTK_ClimbableGrabAttach>();
             // Destroy the old one
             Destroy(this.interactableObject.grabAttachMechanicScript);
             // Replace it with the new one
@@ -127,12 +129,13 @@ public class WeldableObject : MonoBehaviour
             // MARK IT AS WELDED
             this.IsWelded = true;
 
-            Debug.Log("IT WELDED!");
+            // Tell the Patback that we've welded the object
+            var patback = FindObjectOfType<Patback>();
+            if (patback != null)
+                patback.ObjectIsWelded = true;
         }
 
         this.ccollider.isTrigger = false;
-
-        Debug.Log("IT REFUSED TO WELD! " + IsWelded + " " + IsTouchingWeldable);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -150,14 +153,4 @@ public class WeldableObject : MonoBehaviour
         if (otherWeldableObject != null && !otherWeldableObject.IsGrabbed && otherWeldableObject.IsWelded)
             this.weldablesTouchingCount = Mathf.Max(0, weldablesTouchingCount - 1);
     }
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-        
-    //}
-
-    //private void OnCollisionExit(Collision collision)
-    //{
-        
-    //}
 }

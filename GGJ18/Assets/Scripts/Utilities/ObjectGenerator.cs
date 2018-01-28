@@ -25,9 +25,14 @@ public static class ObjectGenerator {
 			(maxScale - minScale)) + minScale) * obj.transform.lossyScale.x;
 		obj.transform.localScale.Scale(new Vector3(scale, scale, scale));
 
-		var int_obj = obj.AddComponent<VRTK_InteractableObject>();
+        obj.AddComponent<BoxCollider>();
+
+        var rbody = obj.AddComponent<Rigidbody>();
+        rbody.constraints = RigidbodyConstraints.None;
+        rbody.useGravity = true;
+        rbody.isKinematic = false;
 		int_obj.isGrabbable = true;
-		int_obj.validDrop = VRTK_InteractableObject.ValidDropTypes.DropAnywhere;
+		int_obj.validDrop = VRTK_InteractableObject.ValidDropTypes.NoDrop;
 		obj.AddComponent<MeshCollider>();
 
 		var rbody = obj.GetComponent<Rigidbody>();
