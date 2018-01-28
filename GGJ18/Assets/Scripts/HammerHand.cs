@@ -4,29 +4,44 @@ using UnityEngine;
 
 public class HammerHand : MonoBehaviour {
 
-	// Use this for initialization
-	void Start ()
+	private Rigidbody myRigidbody;
+
+	private void Awake()
 	{
-		
+		myRigidbody = GetComponent<Rigidbody>();
 	}
-	
-	// Update is called once per frame
-	void Update ()
+
+	// Use this for initialization
+	private void Start ()
 	{
 		
 	}
 
-	void OnCollisionEnter(Collision c)
+	// Update is called once per frame
+	private void Update ()
+	{
+		
+	}
+
+	private void OnCollisionEnter(Collision c)
 	{
 		Debug.Log("Col Enter");
+
+		var foreignBody = c.gameObject.GetComponent<Rigidbody>();
+		if(foreignBody != null)
+		{
+			Debug.Log("Adding force from hammer");
+
+			foreignBody.AddForce(myRigidbody.velocity, ForceMode.VelocityChange);
+		}
 	}
 
-	void OnCollisionStay(Collision c)
+	private void OnCollisionStay(Collision c)
 	{
 		Debug.Log("Col Stay");
 	}
 
-	void OnCollisionExit(Collision c)
+	private void OnCollisionExit(Collision c)
 	{
 		Debug.Log("Col Exit");
 	}
