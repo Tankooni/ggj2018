@@ -13,7 +13,6 @@ public static class ObjectGenerator {
 
 	public static void Init() {
 		var constructables_obj  = Resources.LoadAll("Constructables").Cast<GameObject>().ToArray();
-        Debug.Log(constructables_obj.Count());
         constructables = constructables_obj;
 		WeldedObjects = GameObject.Find("WeldedHecks");
 	}
@@ -23,10 +22,8 @@ public static class ObjectGenerator {
 		var i = rng.Next(0, constructables.Length);
 		var obj = MonoBehaviour.Instantiate(constructables[i], new Vector3(0,0,0), Quaternion.identity);
 		
-		float scale = (float)((rng.NextDouble() % (maxScale - minScale)) + minScale);
+		float scale = (float)((rng.NextDouble() % (maxScale - minScale)) + minScale) * obj.transform.lossyScale.x;
 		obj.transform.SetGlobalScale(new Vector3(scale, scale, scale));
-
-        obj.AddComponent<BoxCollider>();
 
         var rbody = obj.AddComponent<Rigidbody>();
         rbody.constraints = RigidbodyConstraints.None;
@@ -40,6 +37,9 @@ public static class ObjectGenerator {
         int_obj.validDrop = VRTK_InteractableObject.ValidDropTypes.NoDrop;
 
 		obj.AddComponent<WeldableObject>();
+
+        var p_obj = GameObject.FindGameObjectWithTag("WeldedHecks");
+        obj.transform.SetParent(p_obj.transform);
 
 		Debug.Log(obj);
 		return obj;

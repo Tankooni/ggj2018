@@ -54,13 +54,9 @@ public class HammerHand : MonoBehaviour {
 
 	private void OnTriggerEnter(Collider other)
 	{
-		Debug.Log("Col Enter");
-
 		var foreignBody = other.gameObject.GetComponent<Rigidbody>();
 		if (foreignBody != null)
 		{
-			Debug.Log("Adding force from hammer");
-
 			foreignBody.AddForce(myRigidbody.velocity, ForceMode.VelocityChange);
 		}
 
@@ -94,11 +90,9 @@ public class HammerHand : MonoBehaviour {
 
 	private void OnCollisionStay(Collision c)
 	{
-		Debug.Log("Col Stay");
 	}
 
 	private void OnCollisionExit(Collision c)
 	{
-		Debug.Log("Col Exit");
 	}
 }

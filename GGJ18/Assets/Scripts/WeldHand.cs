@@ -6,21 +6,44 @@ using VRTK;
 public class WeldHand : MonoBehaviour {
 
     private VRTK_InteractGrab interactGrab;
-	private VRTK_ControllerEvents controllerEvents;
+    private VRTK_InteractUse interactUse;
+    private VRTK_ControllerEvents controllerEvents;
 
-	private bool hasGrown = false;
+    private bool isGrowing = false;
+    private bool hasGrown = false;
+    private float growValue = 1.1f;
+    private float growTotal = 0;
 
 	private void Awake()
     {
         this.interactGrab = this.gameObject.GetComponent<VRTK_InteractGrab>();
 		controllerEvents = gameObject.GetComponent<VRTK_ControllerEvents>();
+        //interactUse = gameObject.GetComponent<VRTK_InteractUse>();
 
-		interactGrab.ControllerUngrabInteractableObject += OnControllerUngrabInteractableObject;
+
+        interactGrab.ControllerUngrabInteractableObject += OnControllerUngrabInteractableObject;
         interactGrab.ControllerGrabInteractableObject += OnControllerGrabInteractableObject;
+        controllerEvents.SubscribeToButtonAliasEvent(VRTK_ControllerEvents.ButtonAlias.GripPress, true, OnControllerGripPress);
+        //interactUse.UseButtonPressed += OnControllerGripPress;
+    }
 
-		controllerEvents.SubscribeToButtonAliasEvent(VRTK_ControllerEvents.ButtonAlias.GripClick, true, OnControllerGripPress);
+    private void Start()
+    {
+        
+    }
 
-	}
+    private void Update()
+    {
+        if(isGrowing)
+        {
+            var weldy = ObjectGenerator.WeldedObjects.transform;
+            weldy.SetGlobalScale(new Vector3(weldy.lossyScale.x * growValue, weldy.lossyScale.y * growValue, weldy.lossyScale.z * growValue));
+            growTotal += growValue - 1;
+            isGrowing = !(growTotal >= 3);
+            hasGrown = !isGrowing;
+            //Vector3.Slerp()
+        }
+    }
 
     private void OnControllerGrabInteractableObject(object sender, ObjectInteractEventArgs e)
     {
@@ -39,12 +62,9 @@ public class WeldHand : MonoBehaviour {
 	}
 
 	private void OnControllerGripPress(object sender, ControllerInteractionEventArgs e)
-	{
+    {
 		Debug.Log("A gripping tale");
-		hasGrown = true;
-		foreach(Transform childGrowObject in ObjectGenerator.WeldedObjects.transform)
-		{
-			childGrowObject.localScale.Scale(new Vector3(3f, 3f, 3f));
-		}
+        if(!hasGrown)
+            isGrowing = true;
 	}
 }
