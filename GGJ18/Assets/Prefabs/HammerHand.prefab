@@ -69,6 +69,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4191193326518452}
   - component: {fileID: 65197337317991354}
+  - component: {fileID: 114092197452236564}
   m_Layer: 0
   m_Name: HammerHand
   m_TagString: Untagged
@@ -225,3 +226,14 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.08, y: 0.07, z: 0.45}
   m_Center: {x: 0, y: 0.39, z: -0.16}
+--- !u!114 &114092197452236564
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1596736199140570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a029d2930b53eb469fce1f8e77ebada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
