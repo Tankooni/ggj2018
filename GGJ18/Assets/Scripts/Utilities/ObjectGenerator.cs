@@ -23,7 +23,8 @@ public static class ObjectGenerator {
 		float scale = (float)((rng.NextDouble() % (maxScale - minScale)) + minScale);
 		obj.transform.localScale.Scale(new Vector3(scale, scale, scale));
 
-		var interactTouch = obj.AddComponent<VRTK_InteractTouch>();
+		obj.AddComponent<VRTK_InteractableObject>();
+		obj.AddComponent<VRTK_InteractTouch>();
 
 		Debug.Log(obj);
 		return obj;
