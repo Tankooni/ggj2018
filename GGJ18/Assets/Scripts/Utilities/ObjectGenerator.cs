@@ -34,6 +34,7 @@ public static class ObjectGenerator {
 		int_obj.isGrabbable = true;
 		int_obj.validDrop = VRTK_InteractableObject.ValidDropTypes.DropAnywhere;
         int_obj.holdButtonToUse = false;
+        int_obj.validDrop = VRTK_InteractableObject.ValidDropTypes.NoDrop;
 
 		obj.AddComponent<WeldableObject>();
 

@@ -61,11 +61,13 @@ public class WeldableObject : MonoBehaviour
             {
                 this.interactableObject.touchHighlightColor = TOUCHING_WELDABLE_COLOR;
                 this.meshRenderer.material.color = TOUCHING_WELDABLE_COLOR;
+                interactableObject.validDrop = VRTK_InteractableObject.ValidDropTypes.DropAnywhere;
             }
             else
             {
                 this.interactableObject.touchHighlightColor = TOUCHING_COLOR;
                 this.meshRenderer.material.color = Color.white;
+                interactableObject.validDrop = VRTK_InteractableObject.ValidDropTypes.NoDrop;
             }
         }     
     }
