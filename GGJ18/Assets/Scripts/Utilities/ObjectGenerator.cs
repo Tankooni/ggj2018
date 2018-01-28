@@ -20,19 +20,22 @@ public static class ObjectGenerator {
 		var i = rng.Next(0, constructables.Length);
 		var obj = MonoBehaviour.Instantiate(constructables[i], new Vector3(0,0,0), Quaternion.identity);
 		
-		float scale = (float)((rng.NextDouble() % (maxScale - minScale)) + minScale);
+		float scale = (float)
+			((rng.NextDouble() % 
+			(maxScale - minScale)) + minScale) * obj.transform.lossyScale.x;
 		obj.transform.localScale.Scale(new Vector3(scale, scale, scale));
 
 		var int_obj = obj.AddComponent<VRTK_InteractableObject>();
 		int_obj.isGrabbable = true;
 		int_obj.validDrop = VRTK_InteractableObject.ValidDropTypes.DropAnywhere;
-		obj.AddComponent<BoxCollider>();
+		obj.AddComponent<MeshCollider>();
 
 		var rbody = obj.GetComponent<Rigidbody>();
 		rbody.constraints = RigidbodyConstraints.None;
 		rbody.useGravity = true;
 		rbody.isKinematic = false;
 
+		obj.AddComponent<VRTK.Highlighters.VRTK_OutlineObjectCopyHighlighter>();
 		obj.AddComponent<WeldableObject>();
 
 		Debug.Log(obj);
