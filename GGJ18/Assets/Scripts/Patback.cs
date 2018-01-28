@@ -16,11 +16,11 @@ public class Patback : MonoBehaviour {
 			?? collider.GetComponentInParent<VRTK_InteractGrab>();
 
 		if(canGrab(grabbingObject) && ObjectPlaced) {
+			ObjectPlaced = false;
+			
 			var obj = ObjectGenerator.CreateRandomObject(.1f, .5f);
 			grabbingObject.GetComponent<VRTK_InteractTouch>().ForceTouch(obj);
 			grabbingObject.AttemptGrab();
-
-			ObjectPlaced = false;
 		}
 	}
 

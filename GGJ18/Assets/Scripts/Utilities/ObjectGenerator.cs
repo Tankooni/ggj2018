@@ -26,7 +26,14 @@ public static class ObjectGenerator {
 		var int_obj = obj.AddComponent<VRTK_InteractableObject>();
 		int_obj.isGrabbable = true;
 		int_obj.validDrop = VRTK_InteractableObject.ValidDropTypes.DropAnywhere;
-		obj.AddComponent<VRTK_InteractTouch>();
+		obj.AddComponent<BoxCollider>();
+
+		var rbody = obj.GetComponent<Rigidbody>();
+		rbody.constraints = RigidbodyConstraints.None;
+		rbody.useGravity = true;
+		rbody.isKinematic = false;
+
+		obj.AddComponent<WeldableObject>();
 
 		Debug.Log(obj);
 		return obj;
