@@ -9,7 +9,10 @@ public class WeldHand : MonoBehaviour {
     private VRTK_InteractUse interactUse;
     private VRTK_ControllerEvents controllerEvents;
 
-    private bool isGrowing = false;
+	private AudioSource track1;
+	private AudioSource track2;
+
+	private bool isGrowing = false;
     private bool hasGrown = false;
     private float growValue = 1.1f;
     private float growTotal = 0;
@@ -24,8 +27,11 @@ public class WeldHand : MonoBehaviour {
         interactGrab.ControllerUngrabInteractableObject += OnControllerUngrabInteractableObject;
         interactGrab.ControllerGrabInteractableObject += OnControllerGrabInteractableObject;
         controllerEvents.SubscribeToButtonAliasEvent(VRTK_ControllerEvents.ButtonAlias.GripPress, true, OnControllerGripPress);
-        //interactUse.UseButtonPressed += OnControllerGripPress;
-    }
+
+		track1 = GameObject.Find("Track1").GetComponent<AudioSource>();
+		track2 = GameObject.Find("Track2").GetComponent<AudioSource>();
+		//interactUse.UseButtonPressed += OnControllerGripPress;
+	}
 
     private void Start()
     {
@@ -36,7 +42,9 @@ public class WeldHand : MonoBehaviour {
     {
         if(isGrowing)
         {
-            var weldy = ObjectGenerator.WeldedObjects.transform;
+			track1.volume = Mathf.Lerp(track1.volume, 0, .1f);
+			track2.volume = Mathf.Lerp(track2.volume, 1, .1f);
+			var weldy = ObjectGenerator.WeldedObjects.transform;
             weldy.SetGlobalScale(new Vector3(weldy.lossyScale.x * growValue, weldy.lossyScale.y * growValue, weldy.lossyScale.z * growValue));
             growTotal += growValue - 1;
             isGrowing = !(growTotal >= 3);
