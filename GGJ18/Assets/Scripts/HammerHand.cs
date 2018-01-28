@@ -15,4 +15,19 @@ public class HammerHand : MonoBehaviour {
 	{
 		
 	}
+
+	void OnCollisionEnter(Collision c)
+	{
+		Debug.Log("Col Enter");
+	}
+
+	void OnCollisionStay(Collision c)
+	{
+		Debug.Log("Col Stay");
+	}
+
+	void OnCollisionExit(Collision c)
+	{
+		Debug.Log("Col Exit");
+	}
 }
