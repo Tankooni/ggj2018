@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 [RequireComponent(typeof(VRTK_InteractableObject))]
 [RequireComponent(typeof(VRTK_OutlineObjectCopyHighlighter))]
-[RequireComponent(typeof(Collider))]
+//[RequireComponent(typeof(Collider))]
 public class WeldableObject : MonoBehaviour
 {
     private static Color CLIMBABLE_COLOR = Color.yellow;
