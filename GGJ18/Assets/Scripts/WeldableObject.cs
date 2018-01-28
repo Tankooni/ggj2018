@@ -133,7 +133,11 @@ public class WeldableObject : MonoBehaviour
             var patback = FindObjectOfType<Patback>();
             if (patback != null)
                 patback.ObjectIsWelded = true;
-        }
+
+			if (ObjectGenerator.WeldedObjects)
+				this.transform.parent = ObjectGenerator.WeldedObjects.transform;
+
+		}
 
         this.ccollider.isTrigger = false;
     }

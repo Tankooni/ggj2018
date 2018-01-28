@@ -9,10 +9,13 @@ public static class ObjectGenerator {
 	private static GameObject[] constructables;
 	private static System.Random rng = new System.Random();
 
+	public static GameObject WeldedObjects;
+
 	public static void Init() {
 		var constructables_obj  = Resources.LoadAll("Constructables").Cast<GameObject>().ToArray();
         Debug.Log(constructables_obj.Count());
         constructables = constructables_obj;
+		WeldedObjects = GameObject.Find("WeldedHecks");
 	}
 
   public static GameObject CreateRandomObject(float minScale, float maxScale)
