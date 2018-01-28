@@ -16,11 +16,17 @@ public class WeldHand : MonoBehaviour {
 
     private void OnControllerGrabInteractableObject(object sender, ObjectInteractEventArgs e)
     {
-        e.target.AddComponent<WeldableObject>();
+        var weldableObject = e.target.GetComponent<WeldableObject>();
+
+        if (weldableObject != null)
+            weldableObject.OnGrabbed();
     }
 
     private void OnControllerUngrabInteractableObject(object sender, ObjectInteractEventArgs e)
     {
-        Destroy(e.target.GetComponent<WeldableObject>());
+        var weldableObject = e.target.GetComponent<WeldableObject>();
+
+        if (weldableObject != null)
+            weldableObject.OnUngrabbed();
     }
 }
