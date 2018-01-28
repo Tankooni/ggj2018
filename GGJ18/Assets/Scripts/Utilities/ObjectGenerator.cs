@@ -10,7 +10,9 @@ public static class ObjectGenerator {
 	private static System.Random rng = new System.Random();
 
 	public static void Init() {
-		constructables  = Resources.LoadAll("Constructables", typeof(GameObject)).Cast<GameObject>() as GameObject[];
+		var constructables_obj  = Resources.LoadAll("Constructables").Cast<GameObject>().ToArray();
+        Debug.Log(constructables_obj.Count());
+        constructables = constructables_obj;
 	}
 
   public static GameObject CreateRandomObject(float minScale, float maxScale)
@@ -21,7 +23,10 @@ public static class ObjectGenerator {
 		float scale = (float)((rng.NextDouble() % (maxScale - minScale)) + minScale);
 		obj.transform.localScale.Scale(new Vector3(scale, scale, scale));
 
-		var interactTouch = obj.AddComponent<VRTK_InteractTouch>();
+		var int_obj = obj.AddComponent<VRTK_InteractableObject>();
+		int_obj.isGrabbable = true;
+		int_obj.validDrop = VRTK_InteractableObject.ValidDropTypes.DropAnywhere;
+		obj.AddComponent<VRTK_InteractTouch>();
 
 		Debug.Log(obj);
 		return obj;
