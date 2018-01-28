@@ -8,14 +8,15 @@ public class Patback : MonoBehaviour {
 	private bool ObjectPlaced {get; set;}
 	public void Awake() {
 		ObjectGenerator.Init();
+		ObjectPlaced = true;
 	}
 
 	private void OnTriggerStay(Collider collider)	{
-		//Debug.Log("Patback ready for AcTioN!");
+		Debug.Log("Patback ready for AcTioN!");
 		var grabbingObject = collider.gameObject.GetComponent<VRTK_InteractGrab>()
 			?? collider.GetComponentInParent<VRTK_InteractGrab>();
 
-		if(canGrab(grabbingObject) && !ObjectPlaced) {
+		if(canGrab(grabbingObject) && ObjectPlaced) {
 			Debug.Log("Grabbing object");
 
 			var obj = ObjectGenerator.CreateRandomObject(2f, 3f);
