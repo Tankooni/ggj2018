@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using VRTK;
 
 public static class ObjectGenerator {
 
 	private static GameObject[] constructables = 
-		Resources.LoadAll("Prefabs/Constructables", typeof(GameObject)).Cast<GameObject>() as GameObject[];
+		Resources.LoadAll("Assets/Prefabs/Constructables", typeof(GameObject)).Cast<GameObject>() as GameObject[];
 	private static System.Random rng = new System.Random();
 
   public static GameObject CreateRandomObject(float minScale, float maxScale)
@@ -23,6 +24,8 @@ public static class ObjectGenerator {
 		
 		float scale = (float)((rng.NextDouble() % (maxScale - minScale)) + minScale);
 		obj.transform.localScale.Scale(new Vector3(scale, scale, scale));
+
+		var interactTouch = obj.AddComponent<VRTK_InteractTouch>();
 
 		Debug.Log (obj);
 		return obj;
