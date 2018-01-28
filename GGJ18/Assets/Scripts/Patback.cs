@@ -5,7 +5,12 @@ using VRTK;
 
 public class Patback : MonoBehaviour {
 
+	public void Awake() {
+		ObjectGenerator.Init();
+	}
+
 	private void OnTriggerStay(Collider collider)	{
+		Debug.Log("Patback ready for AcTioN!");
 		var grabbingObject = collider.gameObject.GetComponent<VRTK_InteractGrab>()
 			?? collider.GetComponentInParent<VRTK_InteractGrab>();
 
