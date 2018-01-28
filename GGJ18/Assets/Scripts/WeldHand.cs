@@ -42,7 +42,7 @@ public class WeldHand : MonoBehaviour {
     {
         if(isGrowing)
         {
-			track1.volume = Mathf.Lerp(track1.volume, 0, .1f);
+			track1.volume = Mathf.Lerp(track1.volume, 0, -.1f);
 			track2.volume = Mathf.Lerp(track2.volume, 1, .1f);
 			var weldy = ObjectGenerator.WeldedObjects.transform;
             weldy.SetGlobalScale(new Vector3(weldy.lossyScale.x * growValue, weldy.lossyScale.y * growValue, weldy.lossyScale.z * growValue));
