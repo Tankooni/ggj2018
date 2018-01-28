@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17279352, g: 0.21592659, b: 0.2978658, a: 1}
+  m_IndirectSpecularColor: {r: 0.17279339, g: 0.21592629, b: 0.2978657, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -919,7 +919,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 81186593}
-  m_LocalRotation: {x: -0.13039498, y: -0.7205761, z: -0.6680776, w: 0.13205935}
+  m_LocalRotation: {x: -0.13039497, y: -0.72057605, z: -0.6680775, w: 0.13205934}
   m_LocalPosition: {x: 16.99, y: 0.56, z: -1.15}
   m_LocalScale: {x: 0.20000015, y: 0.73330235, z: 0.20000017}
   m_Children: []
@@ -10793,7 +10793,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1089042336}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.08, y: 0.07, z: 0.45}
@@ -16278,7 +16278,7 @@ Prefab:
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 456
+      value: 733
       objectReference: {fileID: 0}
     - target: {fileID: 224000012623161658, guid: d46cf6b1ad9d84a48ae7548a2a6b41b3,
         type: 2}
