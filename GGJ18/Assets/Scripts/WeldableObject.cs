@@ -54,8 +54,10 @@ public class WeldableObject : MonoBehaviour
         if (IsWelded)
         {
             // Keep turning isKinematic on because SOMEONE keeps turning it off!
-            this.rrigidbody.isKinematic = true;
-            this.meshRenderer.material.color = originalColor;
+            if(this.rrigidbody != null) {
+                this.rrigidbody.isKinematic = true;
+                this.meshRenderer.material.color = originalColor;
+            }
         }
         else if (IsGrabbed)
         {

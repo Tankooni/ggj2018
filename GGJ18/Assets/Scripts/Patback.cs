@@ -12,10 +12,13 @@ public class Patback : MonoBehaviour {
 	}
 
 	private void OnTriggerStay(Collider collider)	{
+		//Debug.Log("Patback ready for AcTioN!");
 		var grabbingObject = collider.gameObject.GetComponent<VRTK_InteractGrab>()
 			?? collider.GetComponentInParent<VRTK_InteractGrab>();
 
 		if(canGrab(grabbingObject) && ObjectPlaced) {
+			ObjectPlaced = false;
+			
 			var obj = ObjectGenerator.CreateRandomObject(.1f, .5f);
 			grabbingObject.GetComponent<VRTK_InteractTouch>().ForceTouch(obj);
 			grabbingObject.AttemptGrab();
