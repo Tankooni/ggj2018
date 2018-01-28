@@ -70,16 +70,15 @@ public class HammerHand : MonoBehaviour {
 		{
 			velocity = -VRTK_DeviceFinder.GetControllerVelocity(controllerReference);
             if (velocity.magnitude > 1)
+                velocity.Scale(new Vector3(2.5f, 2.5f, 2.5f));
+
+            if (usePlayerScale)
             {
-                velocity.Scale(new Vector3(20, 20, 20));
-                if (usePlayerScale)
-                {
-                    velocity = playArea.TransformVector(velocity);
-                }
-                else
-                {
-                    velocity = playArea.TransformDirection(velocity);
-                }
+                velocity = playArea.TransformVector(velocity);
+            }
+            else
+            {
+                velocity = playArea.TransformDirection(velocity);
             }
 		}
 
