@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33838876654844830}
   - component: {fileID: 23009939393916722}
   - component: {fileID: 95643191823754576}
+  - component: {fileID: 64895751109918362}
   m_Layer: 0
   m_Name: BearTrap
   m_TagString: Untagged
@@ -35,8 +36,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1673464340053242}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7.860734, y: 0.5, z: -8.667131}
   m_LocalScale: {x: 21.962177, y: 21.962137, z: 21.962137}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,6 +83,20 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1673464340053242}
+  m_Mesh: {fileID: 4300000, guid: f2e7e60c7d5db65418670dcbfa494223, type: 3}
+--- !u!64 &64895751109918362
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1673464340053242}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: f2e7e60c7d5db65418670dcbfa494223, type: 3}
 --- !u!95 &95643191823754576
 Animator:

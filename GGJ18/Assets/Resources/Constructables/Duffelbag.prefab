@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4201640560948834}
   - component: {fileID: 33839820061040240}
   - component: {fileID: 23325416763070548}
+  - component: {fileID: 136819297477915948}
   m_Layer: 0
   m_Name: Duffelbag
   m_TagString: Untagged
@@ -35,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1209360080758320}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15.85148, y: 15.851489, z: 15.851489}
+  m_LocalPosition: {x: -4.746747, y: 1.18, z: -8.365498}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -82,3 +83,16 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1209360080758320}
   m_Mesh: {fileID: 4300000, guid: 9aeeb0a0f45a1a942a844e8157669464, type: 3}
+--- !u!136 &136819297477915948
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1209360080758320}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.18115258
+  m_Height: 1.2890186
+  m_Direction: 2
+  m_Center: {x: 0.00675416, y: 0.1499691, z: 0.00070858}

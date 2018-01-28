@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33119183227151592}
   - component: {fileID: 23811349269843490}
   - component: {fileID: 95872315788855386}
+  - component: {fileID: 64966506029052052}
   m_Layer: 0
   m_Name: Ocarina
   m_TagString: Untagged
@@ -35,9 +36,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1547064939994810}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 25.068462, y: 25.068481, z: 25.068481}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.8147985, y: 0.808, z: -5.5659313}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -82,6 +83,20 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1547064939994810}
+  m_Mesh: {fileID: 4300000, guid: 135a3fce19b68a14a822ec7bb3c1f1d1, type: 3}
+--- !u!64 &64966506029052052
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1547064939994810}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: -1
+  m_SkinWidth: 1.00000005e-20
   m_Mesh: {fileID: 4300000, guid: 135a3fce19b68a14a822ec7bb3c1f1d1, type: 3}
 --- !u!95 &95872315788855386
 Animator:

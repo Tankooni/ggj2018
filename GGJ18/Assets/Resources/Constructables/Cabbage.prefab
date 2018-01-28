@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33982608295603440}
   - component: {fileID: 23467325876096836}
   - component: {fileID: 95033399768038482}
+  - component: {fileID: 64245770583083888}
   m_Layer: 0
   m_Name: Cabbage
   m_TagString: Untagged
@@ -35,9 +36,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1474604808881156}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 25.42205, y: 25.42206, z: 25.42206}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.0258865, y: 0.59, z: -8.405141}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -82,6 +83,20 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1474604808881156}
+  m_Mesh: {fileID: 4300000, guid: 18054e3b6990d86488eed14a9997d16f, type: 3}
+--- !u!64 &64245770583083888
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1474604808881156}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 18054e3b6990d86488eed14a9997d16f, type: 3}
 --- !u!95 &95033399768038482
 Animator:
