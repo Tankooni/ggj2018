@@ -19,7 +19,7 @@ public class Patback : MonoBehaviour {
 		if(canGrab(grabbingObject) && ObjectPlaced) {
 			ObjectPlaced = false;
 			
-			var obj = ObjectGenerator.CreateRandomObject(.1f, .5f);
+			var obj = ObjectGenerator.CreateRandomObject(.8f, 1.2f);
 			grabbingObject.GetComponent<VRTK_InteractTouch>().ForceTouch(obj);
 			grabbingObject.AttemptGrab();
 
