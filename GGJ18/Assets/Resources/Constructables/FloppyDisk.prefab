@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33185967653783154}
   - component: {fileID: 23052777620958502}
   - component: {fileID: 95252928688154728}
+  - component: {fileID: 65846858517173674}
   m_Layer: 0
   m_Name: FloppyDisk
   m_TagString: Untagged
@@ -36,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1011241384651000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 18.884304, y: 18.884327, z: 18.884327}
+  m_LocalPosition: {x: -8.67, y: 1.047, z: -6.31}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -83,6 +84,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1011241384651000}
   m_Mesh: {fileID: 4300000, guid: 7fb41cb0d67c52d4c9d905bb13029f31, type: 3}
+--- !u!65 &65846858517173674
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1011241384651000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7086614, y: 0.7407603, z: 0.023622047}
+  m_Center: {x: 0, y: -0.0044997036, z: 0.011811024}
 --- !u!95 &95252928688154728
 Animator:
   serializedVersion: 3

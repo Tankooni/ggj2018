@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33838256450527136}
   - component: {fileID: 23158233350213054}
   - component: {fileID: 95479890638655982}
+  - component: {fileID: 65678285596507778}
   m_Layer: 0
   m_Name: Arcade
   m_TagString: Untagged
@@ -35,9 +36,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1154930846885942}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 36.27319, y: 36.273243, z: 36.273243}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.2, y: 0.5, z: -8.61}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -83,6 +84,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1154930846885942}
   m_Mesh: {fileID: 4300000, guid: 62a29264dcfbf7147a0e5c8782d7bbd5, type: 3}
+--- !u!65 &65678285596507778
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1154930846885942}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0017029, y: 2.1516817, z: 1.0708454}
+  m_Center: {x: 0, y: 1.071935, z: -0.072889686}
 --- !u!95 &95479890638655982
 Animator:
   serializedVersion: 3

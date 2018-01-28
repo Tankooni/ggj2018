@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33848847323595206}
   - component: {fileID: 23244851978927690}
   - component: {fileID: 95185612115189690}
+  - component: {fileID: 64727872160396588}
   m_Layer: 0
   m_Name: herring
   m_TagString: Untagged
@@ -35,9 +36,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1902715565544828}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.00047947068, y: 0.00047947073, z: 0.00047947073}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.967, y: 0.916, z: -5.702}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -82,6 +83,20 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1902715565544828}
+  m_Mesh: {fileID: 4300000, guid: dec1f535333fcb7439c0524e2c4b4079, type: 3}
+--- !u!64 &64727872160396588
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1902715565544828}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: -1
+  m_SkinWidth: 1.00000005e-20
   m_Mesh: {fileID: 4300000, guid: dec1f535333fcb7439c0524e2c4b4079, type: 3}
 --- !u!95 &95185612115189690
 Animator:

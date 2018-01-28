@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33777571454118680}
   - component: {fileID: 23072075376731068}
   - component: {fileID: 95606403201323944}
+  - component: {fileID: 65382062667153548}
   m_Layer: 0
   m_Name: Lighter
   m_TagString: Untagged
@@ -35,9 +36,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1870897975671688}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 78.14543, y: 78.14532, z: 78.14532}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.8219888, y: 1.093, z: -5.61126}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -83,6 +84,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1870897975671688}
   m_Mesh: {fileID: 4300000, guid: 181244a709cd5c14cb2c3ca3673e4ad4, type: 3}
+--- !u!65 &65382062667153548
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1870897975671688}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.036019802, y: 0.15823834, z: 0.060151663}
+  m_Center: {x: -9.313226e-10, y: 0.07911917, z: 0}
 --- !u!95 &95606403201323944
 Animator:
   serializedVersion: 3

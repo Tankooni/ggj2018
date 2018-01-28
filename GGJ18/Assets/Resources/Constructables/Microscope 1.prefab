@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4564358990458550}
   - component: {fileID: 33245459516413874}
   - component: {fileID: 23498629643133662}
+  - component: {fileID: 64643545621865028}
   m_Layer: 0
   m_Name: Microscope 1
   m_TagString: Untagged
@@ -35,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1507232306159006}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 27.689966, y: 27.689941, z: 27.689941}
+  m_LocalPosition: {x: 2.406, y: 0.5, z: -5.647}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -81,4 +82,18 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1507232306159006}
+  m_Mesh: {fileID: 4300000, guid: 5c1de04532d75f844b116349bfa4c5ca, type: 3}
+--- !u!64 &64643545621865028
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1507232306159006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 5c1de04532d75f844b116349bfa4c5ca, type: 3}

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4178267924981462}
   - component: {fileID: 33816582264874576}
   - component: {fileID: 23184213598273370}
+  - component: {fileID: 64754919893796550}
   m_Layer: 0
   m_Name: Sling
   m_TagString: Untagged
@@ -35,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1928535691236998}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.000000021198, z: 0}
-  m_LocalScale: {x: 0.000694732, y: 0.0006947314, z: 0.0006947314}
+  m_LocalPosition: {x: 0.26501587, y: 1.017, z: -5.5807924}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -81,4 +82,18 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1928535691236998}
+  m_Mesh: {fileID: 4300000, guid: ac93899bb254e584fa45f0391194679f, type: 3}
+--- !u!64 &64754919893796550
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1928535691236998}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: -1
+  m_SkinWidth: 1.00000005e-20
   m_Mesh: {fileID: 4300000, guid: ac93899bb254e584fa45f0391194679f, type: 3}
