@@ -10,7 +10,9 @@ public static class ObjectGenerator {
 	private static System.Random rng = new System.Random();
 
 	public static void Init() {
-		constructables  = Resources.LoadAll("Constructables", typeof(GameObject)).Cast<GameObject>() as GameObject[];
+		var constructables_obj  = Resources.LoadAll("Constructables").Cast<GameObject>().ToArray();
+        Debug.Log(constructables_obj.Count());
+        constructables = constructables_obj;
 	}
 
   public static GameObject CreateRandomObject(float minScale, float maxScale)
